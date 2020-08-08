@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('Checkout'){
             steps{
-                git 'https://github.com/AnjuMeleth/spring-petclinic.git'
+                git 'https://github.com/Phavithran/spring-petclinic.git'
             }
         }
         stage('Build'){
@@ -30,8 +30,8 @@ pipeline{
         stage('Deploy'){
             steps{
                     
-		sh "sudo docker build . -t anjurose/petclinic"
-		sh "sudo docker run -d -p 8091:8080 anjurose/petclinic"
+		sh "sudo docker build . -t phavi85/petclinic"
+		sh "sudo docker run -d -p 8091:8080 phavi85/petclinic"
                 //ansiblePlaybook credentialsId: 'ubuntu', disableHostKeyChecking: true, inventory: '/etc/ansible/hosts', playbook: './petclinic_latest.yml' 
                 //sh "sudo /opt/puppetlabs/bin/puppet agent -t"   
             }
